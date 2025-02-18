@@ -12,7 +12,7 @@ class FlutterProgressLoading extends StatefulWidget {
   }) : assert(child != null);
 
   @override
-  _FlutterProgressLoadingState createState() => _FlutterProgressLoadingState();
+  State<FlutterProgressLoading> createState() => _FlutterProgressLoadingState();
 }
 
 class _FlutterProgressLoadingState extends State<FlutterProgressLoading> {

@@ -28,7 +28,7 @@ class ProgressLoadingTheme {
       ProgressLoading.instance.loadingStyle == ProgressLoadingStyle.custom
           ? ProgressLoading.instance.backgroundColor!
           : ProgressLoading.instance.loadingStyle == ProgressLoadingStyle.dark
-              ? Colors.black.withOpacity(0.9)
+              ? Colors.black.withAlpha((0.9 * 255).toInt())
               : Colors.white;
 
   /// boxShadow color of loading
@@ -51,7 +51,7 @@ class ProgressLoadingTheme {
     return maskType == ProgressLoadingMaskType.custom
         ? ProgressLoading.instance.maskColor!
         : maskType == ProgressLoadingMaskType.black
-            ? Colors.black.withOpacity(0.5)
+            ? Colors.black.withAlpha((0.5 * 255).toInt())
             : Colors.transparent;
   }
 

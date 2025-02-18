@@ -1,4 +1,4 @@
-library flutter_progress_loading;
+library;
 
 export 'src/animations/animation.dart';
 export 'src/progress_loading.dart';

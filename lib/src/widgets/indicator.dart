@@ -10,7 +10,7 @@ class LoadingIndicator extends StatefulWidget {
   });
 
   @override
-  _LoadingIndicatorState createState() => _LoadingIndicatorState();
+  State<LoadingIndicator> createState() => _LoadingIndicatorState();
 }
 
 class _LoadingIndicatorState extends State<LoadingIndicator> {
