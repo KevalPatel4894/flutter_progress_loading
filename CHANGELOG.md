@@ -8,7 +8,13 @@
 - Describe initial release.
 
 ## [0.0.4] - 2025.02.18
-- Describe initial release.
+
+- README Describe added.
 
 ## [0.0.5] - 2025.02.18
-- Describe initial release.
+
+- Example code added.
+
+## [0.0.6] - 2025.02.18
+
+- Change README describe.

@@ -1,6 +1,6 @@
 name: flutter_progress_loading
 description: "A lightweight and efficient loading and toast widget for Flutter, requiring no BuildContext. Supports iOS, Android, and Web for a seamless user experience."
-version: 0.0.5
+version: 0.0.6
 homepage: https://imobtech.co.in
 repository: https://github.com/KevalPatel4894/flutter_progress_loading.git
 
