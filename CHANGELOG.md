@@ -6,4 +6,4 @@
 
 ## [0.0.3] - 2025.02.18
 
-- Describe initial release. 
+- Describe initial release.
