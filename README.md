@@ -180,7 +180,8 @@ Widget infoWidget;
 Because of `ProgressLoading` is a singleton, so you can custom loading style any where like this:
 
 ```dart
-ProgressLoading.instance..displayDuration = const Duration(milliseconds: 2000)
+ProgressLoading.instance
+..displayDuration = const Duration(milliseconds: 2000)
 ..indicatorType = ProgressLoadingIndicatorType.fadingCircle
 ..loadingStyle = ProgressLoadingStyle.dark
 ..indicatorSize = 45.0
