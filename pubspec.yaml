@@ -1,7 +1,8 @@
 name: flutter_progress_loading
 description: "Flutter Progress Loading"
 version: 0.0.1
-homepage:
+homepage: https://imobtech.co.in
+repository: https://github.com/KevalPatel4894/flutter_progress_loading.git
 
 environment:
   sdk: ^3.6.2
