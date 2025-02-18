@@ -51,9 +51,7 @@ class MyApp extends StatelessWidget {
 
 #### **Show Different Loaders**
 ```dart
-ProgressLoading.show
-(
-status: 'Loading...');
+ProgressLoading.show(status: 'Loading...');
 
 ProgressLoading.showProgress(0.3, status: 'Downloading...');
 
@@ -69,7 +67,7 @@ ProgressLoading.dismiss(); // Hide loader
 #### **Listening to Loading Status**
 ```dart
 ProgressLoading.addStatusCallback((status) {
-print('Loading Status: $status');
+      print('Loading Status: $status');
 });
 ```
 
@@ -182,9 +180,7 @@ Widget infoWidget;
 Because of `ProgressLoading` is a singleton, so you can custom loading style any where like this:
 
 ```dart
-ProgressLoading.instance..displayDuration = const Duration
-(
-milliseconds: 2000)
+ProgressLoading.instance..displayDuration = const Duration(milliseconds: 2000)
 ..indicatorType = ProgressLoadingIndicatorType.fadingCircle
 ..loadingStyle = ProgressLoadingStyle.dark
 ..indicatorSize = 45.0
