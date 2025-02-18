@@ -204,7 +204,7 @@ example:
 
 ## License
 
-[MIT License](./LICENSE_temp)
+[MIT License](./LICENSE)
 
 ## ❤️❤️❤️
 
