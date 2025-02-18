@@ -1,213 +1,138 @@
-# flutter_progress_loading
+### 🚀 **Flutter Progress Loading**
 
 [![pub package](https://img.shields.io/pub/v/flutter_progress_loading?style=flat)](https://pub.dev/packages/flutter_progress_loading)
 
-## Installing
+*A lightweight, customizable Flutter loading indicator with progress tracking, animations, and toast
+messages.*
 
-Add this to your package's `pubspec.yaml` file:
+#### 🌟 **Why use `flutter_progress_loading`?**
 
+✅ Lightweight & Fast  
+✅ Multiple Loading Styles (Dark, Light, Custom)  
+✅ Progress Bar Support  
+✅ Animated Custom Loaders  
+✅ Configurable Toast Messages  
+✅ `dismissOnTap` to allow user interactions
+
+---
+
+### 🛠 **Installation**
+
+Add this package to your `pubspec.yaml`:
 ```yaml
 dependencies:
   flutter_progress_loading: ^latest
 ```
 
-## Import
+Then, run:
 
-```dart
-import 'package:flutter_progress_loading/flutter_progress_loading.dart';
+```sh
+flutter pub get
 ```
 
-## How to use
+---
 
-First, initialize `ProgressLoading` in your `MaterialApp`/`CupertinoApp`:
+### 📌 **Basic Usage**
 
+#### **Initialize in `MaterialApp`**
 ```dart
 class MyApp extends StatelessWidget {
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter ProgressLoading',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: MyHomePage(title: 'Flutter ProgressLoading'),
+      title: 'Flutter Progress Loading',
+      theme: ThemeData(primarySwatch: Colors.blue),
+      home: MyHomePage(),
       builder: ProgressLoading.init(),
     );
   }
 }
 ```
 
-Then, enjoy yourself:
-
+#### **Show Different Loaders**
 ```dart
-ProgressLoading.show(status: 'loading...');
-
-ProgressLoading.showProgress(0.3, status: 'downloading...');
-
+ProgressLoading.show
+(
+status: 'Loading...');
+ProgressLoading.showProgress(0.3, status: 'Downloading...');
 ProgressLoading.showSuccess('Great Success!');
-
-ProgressLoading.showError('Failed with Error');
-
-ProgressLoading.showInfo('Useful Information.');
-
-ProgressLoading.showToast('Toast');
-
-ProgressLoading.dismiss();
+ProgressLoading.showError('Oops! Something went wrong.');
+ProgressLoading.showToast('This is a toast message.');
+ProgressLoading.dismiss(); // Hide loader
 ```
 
-Add loading status callback
-
+#### **Listening to Loading Status**
 ```dart
 ProgressLoading.addStatusCallback((status) {
-  print('ProgressLoading Status $status');
+print('Loading Status: $status');
 });
 ```
 
-Remove loading status callback(s)
-
+To remove:
 ```dart
 ProgressLoading.removeCallback(statusCallback);
-
 ProgressLoading.removeAllCallbacks();
 ```
 
-## Customize
+---
 
-❗️**Note:**
+### 🎨 **Customization Options**
 
-- **`textColor`、`indicatorColor`、`progressColor`、`backgroundColor` only used for `ProgressLoadingStyle.custom`.**
-
-- **`maskColor` only used for `ProgressLoadingMaskType.custom`.**
-
+To **fully customize** the loader, modify these properties:
 ```dart
-/// loading style, default [ProgressLoadingStyle.dark].
-ProgressLoadingStyle loadingStyle;
-
-/// loading indicator type, default [ProgressLoadingIndicatorType.fadingCircle].
-ProgressLoadingIndicatorType indicatorType;
-
-/// loading mask type, default [ProgressLoadingMaskType.none].
-ProgressLoadingMaskType maskType;
-
-/// toast position, default [ProgressLoadingToastPosition.center].
-ProgressLoadingToastPosition toastPosition;
-
-/// loading animationStyle, default [ProgressLoadingAnimationStyle.opacity].
-ProgressLoadingAnimationStyle animationStyle;
-
-/// loading custom animation, default null.
-ProgressLoadingAnimation customAnimation;
-
-/// textAlign of status, default [TextAlign.center].
-TextAlign textAlign;
-
-/// textStyle of status, default null.
-TextStyle textStyle;
-
-/// content padding of loading.
-EdgeInsets contentPadding;
-
-/// padding of [status].
-EdgeInsets textPadding;
-
-/// size of indicator, default 40.0.
-double indicatorSize;
-
-/// radius of loading, default 5.0.
-double radius;
-
-/// fontSize of loading, default 15.0.
-double fontSize;
-
-/// width of progress indicator, default 2.0.
-double progressWidth;
-
-/// width of indicator, default 4.0, only used for [ProgressLoadingIndicatorType.ring, ProgressLoadingIndicatorType.dualRing].
-double lineWidth;
-
-/// display duration of [showSuccess] [showError] [showInfo], default 2000ms.
-Duration displayDuration;
-
-/// animation duration of indicator, default 200ms.
-Duration animationDuration;
-
-/// color of loading status, only used for [ProgressLoadingStyle.custom].
-Color textColor;
-
-/// color of loading indicator, only used for [ProgressLoadingStyle.custom].
-Color indicatorColor;
-
-/// progress color of loading, only used for [ProgressLoadingStyle.custom].
-Color progressColor;
-
-/// background color of loading, only used for [ProgressLoadingStyle.custom].
-Color backgroundColor;
-
-/// mask color of loading, only used for [ProgressLoadingMaskType.custom].
-Color maskColor;
-
-/// should allow user interactions while loading is displayed.
-bool userInteractions;
-
-/// should dismiss on user tap.
-bool dismissOnTap;
-
-/// indicator widget of loading
-Widget indicatorWidget;
-
-/// success widget of loading
-Widget successWidget;
-
-/// error widget of loading
-Widget errorWidget;
-
-/// info widget of loading
-Widget infoWidget;
+ProgressLoading.instance..loadingStyle = ProgressLoadingStyle.custom
+  ..indicatorType = ProgressLoadingIndicatorType.fadingCircle..backgroundColor = Colors
+    .black54..progressColor = Colors.blue..maskColor = Colors.black.withOpacity
+(0.5)
+..indicatorSize =
+50.0
+..
+dismissOnTap
+=
+true;
 ```
 
-Because of `ProgressLoading` is a singleton, so you can custom loading style any where like this:
+🔹 **See all properties in the [Full Customization Guide](#)**
+
+---
+
+### 🎬 **Custom Animations**
+
+You can create a **custom loading animation** like this:
 
 ```dart
-ProgressLoading.instance
-  ..displayDuration = const Duration(milliseconds: 2000)
-  ..indicatorType = ProgressLoadingIndicatorType.fadingCircle
-  ..loadingStyle = ProgressLoadingStyle.dark
-  ..indicatorSize = 45.0
-  ..radius = 10.0
-  ..progressColor = Colors.yellow
-  ..backgroundColor = Colors.green
-  ..indicatorColor = Colors.yellow
-  ..textColor = Colors.yellow
-  ..maskColor = Colors.blue.withOpacity(0.5)
-  ..userInteractions = true
-  ..dismissOnTap = false
-  ..customAnimation = CustomAnimation();
+class CustomAnimation extends ProgressLoadingAnimation {
+  @override
+  Widget buildWidget(Widget child) {
+    return ScaleTransition(scale: animation, child: child);
+  }
+}
 ```
 
-More indicatorType can see in 👉 [flutter_spinkit showcase](https://github.com/jogboms/flutter_spinkit#-showcase)
+👉 [See full example](https://github.com/KevalPatel4894/flutter_progress_loading/blob/main/example/lib/custom_animation.dart)
 
-## Custom Animation
+---
 
-example:
-👉 [Custom Animation](https://github.com/KevalPatel4894/flutter_progress_loading/blob/main/example/lib/custom_animation.dart)
+### 📝 **Changelog & Roadmap**
 
-## Todo
+✅ Progress Indicator  
+✅ Custom Animation Support  
+⬜ Add More Animation Types (Upcoming)  
+[View Full Changelog](./CHANGELOG.md)
 
-- [x] add progress indicator
+---
 
-- [x] add custom animation
+### 💜 **License**
 
-## Changelog
+This package is licensed under the **MIT License**.  
+[View License](./LICENSE)
 
-[CHANGELOG](./CHANGELOG.md)
+---
 
-## License
+### 📢 **Support & Contributions**
 
-[MIT License](./LICENSE)
+💙 If you like this package, give it a ⭐ on [GitHub](#)  
+📢 Report issues or suggest features in the [Issues](#) section
 
-## ❤️❤️❤️
+---
 
-Thanks to [flutter_spinkit](https://github.com/jogboms/flutter_spinkit) ❤️
-
-Supported by [JetBrains Open Source](https://www.jetbrains.com/community/opensource/#support)
