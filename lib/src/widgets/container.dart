@@ -80,9 +80,10 @@ class ProgressLoadingContainerState extends State<ProgressLoadingContainer>
   Future<void> show(bool animation) {
     if (isPersistentCallbacks) {
       Completer<void> completer = Completer<void>();
-      _ambiguate(SchedulerBinding.instance)!.addPostFrameCallback((_) =>
-          completer
-              .complete(_animationController.forward(from: animation ? 0 : 1)));
+      _ambiguate(SchedulerBinding.instance)!.addPostFrameCallback((_) async {
+        await _animationController.forward(from: animation ? 0 : 1);
+        completer.complete();
+      });
       return completer.future;
     } else {
       return _animationController.forward(from: animation ? 0 : 1);
@@ -92,9 +93,10 @@ class ProgressLoadingContainerState extends State<ProgressLoadingContainer>
   Future<void> dismiss(bool animation) {
     if (isPersistentCallbacks) {
       Completer<void> completer = Completer<void>();
-      _ambiguate(SchedulerBinding.instance)!.addPostFrameCallback((_) =>
-          completer
-              .complete(_animationController.reverse(from: animation ? 1 : 0)));
+      _ambiguate(SchedulerBinding.instance)!.addPostFrameCallback((_) async {
+        await _animationController.reverse(from: animation ? 1 : 0);
+        completer.complete();
+      });
       return completer.future;
     } else {
       return _animationController.reverse(from: animation ? 1 : 0);
