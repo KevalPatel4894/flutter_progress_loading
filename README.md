@@ -1,6 +1,6 @@
 # flutter_progress_loading
 
-[![pub package](https://img.shields.io/pub/v/flutter_easyloading?style=flat)](https://pub.dev/packages/flutter_progress_loading) [![pub points](https://badges.bar/flutter_easyloading/pub%20points)](https://pub.dev/packages/flutter_easyloading/score) [![popularity](https://badges.bar/flutter_easyloading/popularity)](https://pub.dev/packages/flutter_easyloading/score) [![likes](https://badges.bar/flutter_easyloading/likes)](https://pub.dev/packages/flutter_easyloading/score) [![license](https://img.shields.io/github/license/nslogx/flutter_easyloading?style=flat)](https://github.com/nslogx/flutter_easyloading) [![stars](https://img.shields.io/github/stars/nslogx/flutter_easyloading?style=social)](https://github.com/nslogx/flutter_easyloading)
+[![pub package](https://img.shields.io/pub/v/flutter_progress_loading?style=flat)](https://pub.dev/packages/flutter_progress_loading) [![pub points](https://badges.bar/flutter_progress_loading/pub%20points)](https://pub.dev/packages/flutter_progress_loading/score) [![popularity](https://badges.bar/flutter_progress_loading/popularity)](https://pub.dev/packages/flutter_progress_loading/score) [![likes](https://badges.bar/flutter_progress_loading/likes)](https://pub.dev/packages/flutter_progress_loading/score) [![license](https://img.shields.io/github/license/KevalPatel4894/flutter_progress_loading?style=flat)](https://github.com/KevalPatel4894/flutter_progress_loading) [![stars](https://img.shields.io/github/stars/KevalPatel4894/flutter_progress_loading?style=social)](https://github.com/KevalPatel4894/flutter_progress_loading.git)
 
 ## Installing
 
@@ -189,7 +189,8 @@ More indicatorType can see in 👉 [flutter_spinkit showcase](https://github.com
 
 ## Custom Animation
 
-example: 👉 [Custom Animation](https://github.com/nslogx/flutter_easyloading/blob/develop/example/lib/custom_animation.dart)
+example:
+👉 [Custom Animation](https://github.com/KevalPatel4894/flutter_progress_loading/blob/main/example/lib/custom_animation.dart)
 
 ## Todo
 
