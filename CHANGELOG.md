@@ -11,5 +11,4 @@
 - Describe initial release.
 
 ## [0.0.5] - 2025.02.18
-
 - Describe initial release.
