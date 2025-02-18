@@ -1,6 +1,6 @@
 # flutter_progress_loading
 
-[![pub package](https://img.shields.io/pub/v/flutter_progress_loading?style=flat)]
+[![pub package](https://img.shields.io/pub/v/flutter_progress_loading?style=flat)](https://pub.dev/packages/flutter_progress_loading)
 
 ## Installing
 
